@@ -1,6 +1,6 @@
 package com.felipemp0.jaxrsservicesembeddedtomcatkafka.salesapi.config;
 
-import com.felipemp0.jaxrsservicesembeddedtomcatkafka.salesapi.controllers.SaleController;
+import com.felipemp0.jaxrsservicesembeddedtomcatkafka.salesapi.resources.SaleController;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;

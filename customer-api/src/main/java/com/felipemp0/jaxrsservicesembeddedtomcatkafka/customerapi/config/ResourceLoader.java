@@ -1,6 +1,6 @@
 package com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.config;
 
-import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.controllers.CustomerController;
+import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.resources.CustomerController;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
