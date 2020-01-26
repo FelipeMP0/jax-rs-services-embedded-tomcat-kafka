@@ -1,0 +1,5 @@
+rootProject.name = 'jax-rs-services-embedded-tomcat-kafka'
+include 'sales-api'
+include 'customer-api'
+include 'products-api'
+
