@@ -1,11 +1,14 @@
 package com.felipemp0.jaxrsservicesembeddedtomcatkafka.salesapi.resources;
 
+import com.felipemp0.jaxrsservicesembeddedtomcatkafka.salesapi.models.Sale;
 import com.felipemp0.jaxrsservicesembeddedtomcatkafka.salesapi.services.SaleService;
 
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.concurrent.ExecutionException;
 
 @Path("sales")
 public class SaleController {
@@ -16,12 +19,13 @@ public class SaleController {
         this.saleService = new SaleService();
     }
 
-    @GET
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response doGet() throws ExecutionException, InterruptedException {
-        this.saleService.sendSaleEvent("test1", "value1");
+    public Response doGet(Sale sale) {
+        this.saleService.sendSaleEvent(sale);
 
-        return Response.status(Response.Status.OK).entity("Sale controller").build();
+        return Response.status(Response.Status.OK).entity(sale).build();
     }
 
 }

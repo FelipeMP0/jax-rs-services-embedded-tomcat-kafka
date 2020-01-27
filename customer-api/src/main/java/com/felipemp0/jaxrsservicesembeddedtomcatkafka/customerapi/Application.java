@@ -1,6 +1,6 @@
 package com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi;
 
-import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.config.KafkaConsumersLoader;
+import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.config.KafkaLoader;
 import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.config.ResourceLoader;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
@@ -13,7 +13,7 @@ import java.io.File;
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        KafkaConsumersLoader.startConsumers();
+        KafkaLoader.startConsumers();
 
         new Application().start();
     }
@@ -21,7 +21,7 @@ public class Application {
     public void start() throws LifecycleException {
         Tomcat tomcat = new Tomcat();
 
-        tomcat.setPort(8080);
+        tomcat.setPort(8083);
 
         Context context = tomcat.addWebapp("/customers/v1", new File(".").getAbsolutePath());
 
