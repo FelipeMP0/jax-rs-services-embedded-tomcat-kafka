@@ -1,4 +1,4 @@
-package com.felipemp0.jaxrsservicesembeddedtomcatkafka.productsapi.factories;
+package com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.factories;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -14,7 +14,7 @@ public class KafkaConsumerFactory {
         final Properties consumerConfig = new Properties();
 
         consumerConfig.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        consumerConfig.put(ConsumerConfig.GROUP_ID_CONFIG, "productsapi");
+        consumerConfig.put(ConsumerConfig.GROUP_ID_CONFIG, "customerapi");
         consumerConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, deserializer);
         consumerConfig.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, deserializer);
 

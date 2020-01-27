@@ -1,5 +1,6 @@
 package com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi;
 
+import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.config.KafkaConsumersLoader;
 import com.felipemp0.jaxrsservicesembeddedtomcatkafka.customerapi.config.ResourceLoader;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
@@ -12,6 +13,8 @@ import java.io.File;
 public class Application {
 
     public static void main(String[] args) throws Exception {
+        KafkaConsumersLoader.startConsumers();
+
         new Application().start();
     }
 
