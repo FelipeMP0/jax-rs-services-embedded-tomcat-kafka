@@ -18,7 +18,7 @@ public class Application {
     public void start() throws LifecycleException {
         Tomcat tomcat = new Tomcat();
 
-        tomcat.setPort(8001);
+        tomcat.setPort(8083);
 
         Context context = tomcat.addWebapp("/sales/v1", new File(".").getAbsolutePath());
 

@@ -22,14 +22,16 @@ public class SaleConsumer implements Consumer {
 
     @Override
     public void consumeRecords() {
-        kafkaConsumer.subscribe(Collections.singleton("sales"));
+        new Thread(() -> {
+            kafkaConsumer.subscribe(Collections.singleton("sales"));
 
-        while (true) {
-            final ConsumerRecords<String, Sale> records = kafkaConsumer.poll(Duration.ofSeconds(5));
-            for (final ConsumerRecord<String, Sale> record : records) {
-                System.out.println("Resultado = " + record.value());
+            while (true) {
+                final ConsumerRecords<String, Sale> records = kafkaConsumer.poll(Duration.ofSeconds(5));
+                for (final ConsumerRecord<String, Sale> record : records) {
+                    System.out.println("Resultado = " + record.value());
+                }
             }
-        }
+        }).start();
     }
 
 }

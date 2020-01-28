@@ -8,7 +8,7 @@ public class KafkaLoader {
 
     public static void startConsumers() {
         new SaleConsumer().consumeRecords();
-        new CustomersOrderCountConsumer().consumeRecords();
-        new CustomerOrdersCountStream().startStream();
+        //new CustomersOrderCountConsumer().consumeRecords();
+        //new CustomerOrdersCountStream().startStream();
     }
 }
