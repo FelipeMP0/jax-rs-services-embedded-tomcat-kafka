@@ -9,6 +9,9 @@ import java.util.Properties;
 
 public class KafkaProducerFactory {
 
+    private KafkaProducerFactory() {
+    }
+
     public static KafkaProducer<String, Sale> createProducer(final String bootstrapServers) {
         String keySerializer = StringSerializer.class.getName();
 

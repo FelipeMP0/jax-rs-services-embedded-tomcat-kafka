@@ -19,7 +19,7 @@ public class SaleService {
     }
 
     public void sendSaleEvent(Sale sale) {
-        kafkaProducer.send(new ProducerRecord<>("sales", UUID.randomUUID().toString(), sale));
+        this.kafkaProducer.send(new ProducerRecord<>("sales", UUID.randomUUID().toString(), sale));
     }
 
 }
